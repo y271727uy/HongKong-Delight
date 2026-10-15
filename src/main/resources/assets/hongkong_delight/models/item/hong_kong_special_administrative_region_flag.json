@@ -1,0 +1,9 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "hongkong_delight:item/hong_kong_special_administrative_region_flag"
+  }
+}
+
+
+

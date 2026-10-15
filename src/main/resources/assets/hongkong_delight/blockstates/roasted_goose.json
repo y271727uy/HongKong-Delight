@@ -1,0 +1,154 @@
+﻿{
+    "variants":  {
+                     "facing=north,servings=9":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage0"
+                                                 },
+                     "facing=north,servings=8":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage1"
+                                                 },
+                     "facing=north,servings=7":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage2"
+                                                 },
+                     "facing=north,servings=6":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage3"
+                                                 },
+                     "facing=north,servings=5":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage4"
+                                                 },
+                     "facing=north,servings=4":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage5"
+                                                 },
+                     "facing=north,servings=3":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage6"
+                                                 },
+                     "facing=north,servings=2":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage7"
+                                                 },
+                     "facing=north,servings=1":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage8"
+                                                 },
+                     "facing=north,servings=0":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage9"
+                                                 },
+                     "facing=east,servings=9":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage0",
+                                                    "y":  90
+                                                },
+                     "facing=east,servings=8":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage1",
+                                                    "y":  90
+                                                },
+                     "facing=east,servings=7":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage2",
+                                                    "y":  90
+                                                },
+                     "facing=east,servings=6":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage3",
+                                                    "y":  90
+                                                },
+                     "facing=east,servings=5":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage4",
+                                                    "y":  90
+                                                },
+                     "facing=east,servings=4":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage5",
+                                                    "y":  90
+                                                },
+                     "facing=east,servings=3":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage6",
+                                                    "y":  90
+                                                },
+                     "facing=east,servings=2":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage7",
+                                                    "y":  90
+                                                },
+                     "facing=east,servings=1":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage8",
+                                                    "y":  90
+                                                },
+                     "facing=east,servings=0":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage9",
+                                                    "y":  90
+                                                },
+                     "facing=south,servings=9":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage0",
+                                                     "y":  180
+                                                 },
+                     "facing=south,servings=8":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage1",
+                                                     "y":  180
+                                                 },
+                     "facing=south,servings=7":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage2",
+                                                     "y":  180
+                                                 },
+                     "facing=south,servings=6":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage3",
+                                                     "y":  180
+                                                 },
+                     "facing=south,servings=5":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage4",
+                                                     "y":  180
+                                                 },
+                     "facing=south,servings=4":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage5",
+                                                     "y":  180
+                                                 },
+                     "facing=south,servings=3":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage6",
+                                                     "y":  180
+                                                 },
+                     "facing=south,servings=2":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage7",
+                                                     "y":  180
+                                                 },
+                     "facing=south,servings=1":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage8",
+                                                     "y":  180
+                                                 },
+                     "facing=south,servings=0":  {
+                                                     "model":  "hongkong_delight:block/roasted_goose_stage9",
+                                                     "y":  180
+                                                 },
+                     "facing=west,servings=9":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage0",
+                                                    "y":  270
+                                                },
+                     "facing=west,servings=8":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage1",
+                                                    "y":  270
+                                                },
+                     "facing=west,servings=7":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage2",
+                                                    "y":  270
+                                                },
+                     "facing=west,servings=6":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage3",
+                                                    "y":  270
+                                                },
+                     "facing=west,servings=5":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage4",
+                                                    "y":  270
+                                                },
+                     "facing=west,servings=4":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage5",
+                                                    "y":  270
+                                                },
+                     "facing=west,servings=3":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage6",
+                                                    "y":  270
+                                                },
+                     "facing=west,servings=2":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage7",
+                                                    "y":  270
+                                                },
+                     "facing=west,servings=1":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage8",
+                                                    "y":  270
+                                                },
+                     "facing=west,servings=0":  {
+                                                    "model":  "hongkong_delight:block/roasted_goose_stage9",
+                                                    "y":  270
+                                                }
+                 }
+}

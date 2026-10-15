@@ -1,0 +1,11 @@
+# Minimal version catalog for this project
+# Removed registrate and JEI entries per user request.
+
+[versions]
+# add versions here when needed
+
+[libraries]
+# add library aliases here when needed
+
+[bundles]
+# add bundles here when needed

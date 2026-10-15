@@ -1,0 +1,6 @@
+﻿{
+    "parent":  "minecraft:item/generated",
+    "textures":  {
+                     "layer0":  "hongkong_delight:item/roasted_goose_meat"
+                 }
+}

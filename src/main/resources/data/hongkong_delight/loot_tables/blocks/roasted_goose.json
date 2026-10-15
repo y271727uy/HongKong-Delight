@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "hongkong_delight:roasted_goose"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "hongkong_delight:roasted_goose",
+          "properties": {
+            "servings": "9"
+          }
+        }
+      ]
+    }
+  ]
+}

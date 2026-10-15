@@ -3,6 +3,7 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'net.neoforged.moddev.legacyforge' version '2.0.91'
+    id 'io.freefair.lombok' version "9.1.0"
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -19,6 +20,47 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    maven { // JEI
+        name = "Jared's Maven"
+        url = "https://maven.blamejared.com/"
+    }
+    maven { // JEI mirror, AE2
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
+    maven {
+        url "https://maven.latvian.dev/releases"
+        content {
+            includeGroup "dev.latvian.mods"
+            includeGroup "dev.latvian.apps"
+        }
+    }
+
+    maven {
+        url "https://jitpack.io"
+        content {
+            includeGroup "com.github.rtyley"
+        }
+    }
+    maven { url "https://maven.architectury.dev/" }
+    maven { // Modrinth
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        maven { url = uri('https://maven.tterrag.com') }
+        maven { url = uri('https://api.modrinth.com/maven') }
+        maven { url = uri('https://maven.neoforged.net/releases') }
+        maven { url = uri('https://maven.blamejared.com') }
+        maven { url = uri('https://modmaven.dev') }
+        maven { url = uri('https://maven.architectury.dev') }
+        maven { url = uri('https://maven.minecraftforge.net') }
+        mavenCentral()
+    }
 }
 
 base {
@@ -116,49 +158,38 @@ obfuscation {
 }
 
 dependencies {
-    // If you wish to declare dependencies against mods, make sure to use the 'mod*' configurations so that they're remapped.
-	// See https://github.com/neoforged/ModDevGradle/blob/main/LEGACY.md#remapping-mod-dependencies for more information.
-	
-    // Example optional mod dependency with JEI
-    // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
-    // modCompileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
-    // modCompileOnly "mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"
-    // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it
-    // modLocalRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
+    // The following dependencies are optional third-party mods that may not be
+    // resolvable in all environments or without the correct repositories.
+    // If you want to build with Registrate and JEI support, re-enable these
+    // lines and ensure the repositories in settings.gradle contain the
+    // locations that host them (e.g. maven.tterrag.com, maven.blamejared.com).
+    // jarJar(modApi(libs.registrate.get()))
+    // modImplementation(libs.bundles.jei)
 
-    // Example mod dependency using a mod jar from ./libs with a flat dir repository
-    // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
-    // The group id is ignored when searching -- in this case, it is "blank"
-    // modImplementation "blank:coolmod-${mc_version}:${coolmod_version}"
-
-    // Example mod dependency using a file as dependency
-    // modImplementation files("libs/coolmod-${mc_version}-${coolmod_version}.jar")
-
-    // Example project dependency using a sister or child project:
-    // modImplementation project(":myproject")
-
-    // For more info:
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    modImplementation("maven.modrinth:farmers-delight:1.20.1-1.2.7")
+    modImplementation("dev.latvian.mods:rhino-forge:2001.2.3-build.10")
+    modImplementation("dev.latvian.mods:kubejs-forge:2001.6.5-build.20")
+    modImplementation("maven.modrinth:jade:11.13.2+forge")
+    modImplementation("dev.architectury:architectury-forge:9.2.14")
 }
 
 // Uncomment the lines below if you wish to configure mixin. The mixin file should be named modid.mixins.json.
-/*
-mixin {
-    add sourceSets.main, "${mod_id}.refmap.json"
-    config "${mod_id}.mixins.json"
-}
+// mixin {
+//     add sourceSets.main, "${mod_id}.refmap.json"
+//     config "${mod_id}.mixins.json"
+// }
 
 dependencies {
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    // 移除Mixin注解处理器依赖
+    // annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 jar {
-    manifest.attributes([
-            "MixinConfigs": "${mod_id}.mixins.json"
-    ])
+    // 移除Mixin配置
+    // manifest.attributes([
+    //         "MixinConfigs": "${mod_id}.mixins.json"
+    // ])
 }
-*/
 
 // This block of code expands all declared replace properties in the specified resource targets.
 // A missing property will result in an error. Properties are expanded using ${} Groovy notation.
