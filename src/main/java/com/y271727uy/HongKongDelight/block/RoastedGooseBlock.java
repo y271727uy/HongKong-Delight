@@ -48,27 +48,27 @@ public class RoastedGooseBlock extends Block {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (level.isClientSide) {
-            return takeServing(level, pos, state, player).consumesAction()
-                    ? InteractionResult.SUCCESS
-                    : InteractionResult.CONSUME;
-        }
-        return takeServing(level, pos, state, player);
-    }
-
-    private InteractionResult takeServing(LevelAccessor level, BlockPos pos, BlockState state, Player player) {
-        int servings = state.getValue(SERVINGS);
-        if (servings <= 0) {
-            level.playSound(null, pos, SoundEvents.WOOD_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
-            level.destroyBlock(pos, true);
             return InteractionResult.SUCCESS;
         }
 
-        ItemStack serving = new ItemStack(ModItems.ROASTED_GOOSE_MEAT.get());
-        level.setBlock(pos, state.setValue(SERVINGS, servings - 1), Block.UPDATE_ALL);
+        int servings = state.getValue(SERVINGS);
+        ItemStack serving;
+        if (servings <= 0) {
+            serving = new ItemStack(ModItems.PORCELAIN_PLATE.get());
+            level.removeBlock(pos, false);
+            level.playSound(null, pos, SoundEvents.WOOD_BREAK, SoundSource.BLOCKS, 0.8F, 0.8F);
+        } else {
+            // The first two servings are goose legs; all remaining food servings are goose meat.
+            serving = new ItemStack(servings >= 8
+                    ? ModItems.ROASTED_GOOSE_LEG.get()
+                    : ModItems.ROASTED_GOOSE_MEAT.get());
+            level.setBlock(pos, state.setValue(SERVINGS, servings - 1), Block.UPDATE_ALL);
+            level.playSound(null, pos, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
+        }
+
         if (!player.getAbilities().instabuild && !player.getInventory().add(serving)) {
             player.drop(serving, false);
         }
-        level.playSound(null, pos, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
         return InteractionResult.SUCCESS;
     }
 

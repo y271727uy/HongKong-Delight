@@ -3,6 +3,7 @@ package com.y271727uy.HongKongDelight;
 import com.mojang.logging.LogUtils;
 import com.y271727uy.HongKongDelight.all.ModBlocks;
 import com.y271727uy.HongKongDelight.all.ModCreativeTabs;
+import com.y271727uy.HongKongDelight.all.ModEntities;
 import com.y271727uy.HongKongDelight.all.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -20,7 +21,9 @@ public class HongKongDelightMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModBlocks.BLOCKS.register(modEventBus);
+        ModEntities.ENTITY_TYPES.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
+        modEventBus.addListener(ModEntities::registerAttributes);
         ModCreativeTabs.register(modEventBus);
 
     }

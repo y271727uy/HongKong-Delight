@@ -15,9 +15,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         itemModels().getBuilder("roasted_goose")
                 .parent(itemModels().getExistingFile(mcLoc("item/generated")))
                 .texture("layer0", modLoc("item/roasted_goose"));
-        itemModels().getBuilder("roasted_goose_meat")
-                .parent(itemModels().getExistingFile(mcLoc("item/generated")))
-                .texture("layer0", modLoc("item/roasted_goose_meat"));
         itemModels().getBuilder("roasted_goose_leg")
                 .parent(itemModels().getExistingFile(mcLoc("item/generated")))
                 .texture("layer0", modLoc("item/roasted_goose_leg"));
